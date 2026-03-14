@@ -55,7 +55,9 @@ const Hero = () => {
               className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
             >
               <a
-                href="#contact"
+                href="https://www.doctorim.co.il/doctor-10016703/%D7%93%D7%A8-%D7%A9%D7%A8%D7%94-%D7%A8%D7%95%D7%98%D7%9E%D7%9F/%D7%90%D7%A3-%D7%90%D7%95%D7%96%D7%9F-%D7%92%D7%A8%D7%95%D7%9F?status=appoint&bycln=10021413"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 bg-brand-primary text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-brand-dark transition-all hover:shadow-lg"
               >
                 <Phone className="w-5 h-5" />

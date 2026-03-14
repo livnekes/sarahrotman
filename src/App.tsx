@@ -3,6 +3,11 @@ import Hero from "./components/Hero";
 import About from "./components/About";
 import Services from "./components/Services";
 import OSA from "./components/OSA";
+import OSAChildren from "./components/OSAChildren";
+import DISE from "./components/DISE";
+import Italy from "./components/Italy";
+import Awards from "./components/Awards";
+import Reviews from "./components/Reviews";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
@@ -14,6 +19,11 @@ function App() {
       <About />
       <Services />
       <OSA />
+      <OSAChildren />
+      <DISE />
+      <Italy />
+      <Awards />
+      <Reviews />
       <Contact />
       <Footer />
     </div>

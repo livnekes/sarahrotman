@@ -7,7 +7,11 @@ const Navbar = () => {
   const navLinks = [
     { href: "#about", label: "אודות" },
     { href: "#services", label: "ניתוחים וטיפולים" },
-    { href: "#osa", label: "דום נשימה בשינה" },
+    { href: "#osa", label: "דום נשימה במבוגרים" },
+    { href: "#osa-children", label: "דום נשימה בילדים" },
+    { href: "#dise", label: "DISE" },
+    { href: "#italy", label: "השתלמות באיטליה" },
+    { href: "#awards", label: "פרסים אקדמיים" },
     { href: "#contact", label: "צור קשר" },
   ];
 
@@ -20,19 +24,21 @@ const Navbar = () => {
           </a>
 
           {/* Desktop nav */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-6">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="text-gray-600 hover:text-brand-primary transition-colors font-medium"
+                className="text-gray-600 hover:text-brand-primary transition-colors font-medium text-sm"
               >
                 {link.label}
               </a>
             ))}
             <a
-              href="tel:+972000000000"
-              className="flex items-center gap-2 bg-brand-primary text-white px-5 py-2.5 rounded-full hover:bg-brand-dark transition-colors font-medium"
+              href="https://www.doctorim.co.il/doctor-10016703/%D7%93%D7%A8-%D7%A9%D7%A8%D7%94-%D7%A8%D7%95%D7%98%D7%9E%D7%9F/%D7%90%D7%A3-%D7%90%D7%95%D7%96%D7%9F-%D7%92%D7%A8%D7%95%D7%9F?status=appoint&bycln=10021413"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 bg-brand-primary text-white px-5 py-2.5 rounded-full hover:bg-brand-dark transition-colors font-medium text-sm"
             >
               <Phone className="w-4 h-4" />
               קביעת תור
@@ -42,7 +48,7 @@ const Navbar = () => {
           {/* Mobile toggle */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 text-gray-600"
+            className="lg:hidden p-2 text-gray-600"
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -50,7 +56,7 @@ const Navbar = () => {
 
         {/* Mobile nav */}
         {isOpen && (
-          <div className="md:hidden pb-4 border-t">
+          <div className="lg:hidden pb-4 border-t">
             {navLinks.map((link) => (
               <a
                 key={link.href}
@@ -62,7 +68,10 @@ const Navbar = () => {
               </a>
             ))}
             <a
-              href="tel:+972000000000"
+              href="https://www.doctorim.co.il/doctor-10016703/%D7%93%D7%A8-%D7%A9%D7%A8%D7%94-%D7%A8%D7%95%D7%98%D7%9E%D7%9F/%D7%90%D7%A3-%D7%90%D7%95%D7%96%D7%9F-%D7%92%D7%A8%D7%95%D7%9F?status=appoint&bycln=10021413"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setIsOpen(false)}
               className="flex items-center justify-center gap-2 mt-2 bg-brand-primary text-white px-5 py-2.5 rounded-full hover:bg-brand-dark transition-colors font-medium"
             >
               <Phone className="w-4 h-4" />

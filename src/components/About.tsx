@@ -16,11 +16,13 @@ const credentials = [
     icon: Globe,
     title: "השתלמות בינלאומית",
     description: "השתלמות באיטליה אצל פרופ׳ ויציני בניתוחים לנחירות ודום נשימה בשינה",
+    href: "#italy",
   },
   {
     icon: Award,
     title: "פרסים אקדמיים",
     description: "זוכת פרס המאמר המחקרי הקליני הטוב ביותר ע״ש וולטר (2016) ופרס New Investigator Award בכנס World Sleep 2023",
+    href: "#awards",
   },
   {
     icon: BookOpen,
@@ -45,33 +47,54 @@ const About = () => {
           </h2>
           <div className="w-20 h-1 bg-brand-accent mx-auto mb-6" />
           <p className="text-gray-600 text-lg max-w-3xl mx-auto leading-relaxed">
-            ד״ר שרה רוטמן היא רופאה בכירה מומחית באף אוזן גרון וכירורגיה של ראש וצוואר.
-            לאחר סיום ההתמחות באסף הרופא, השתלמה באיטליה אצל פרופ׳ ויציני בניתוחים
-            לנחירות ודום נשימה בשינה. ד״ר רוטמן קיבלה מספר פרסי מחקר על תרומתה
+            ד״ר שרה רוטמן היא רופאה מומחית באף אוזן גרון וכירורגיה של ראש וצוואר,
+            המתמקצעת בנחירות ודום נשימה בשינה במבוגרים וילדים.
+            לאחר סיום ההתמחות במרכז הרפואי אסף הרופא, השתלמה באיטליה אצל פרופ׳ ויציני
+            בניתוחים לנחירות ודום נשימה בשינה. ד״ר רוטמן קיבלה מספר פרסי מחקר על תרומתה
             האקדמית, ביניהם פרס המאמר המחקרי הקליני הטוב ביותר ע״ש וולטר לשנת 2016,
             ופרס היוקרתי New Investigator Award בכנס World Sleep 2023 בריו דה ז׳ניירו.
           </p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
-          {credentials.map((item, index) => (
-            <motion.div
-              key={item.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.15 }}
-              className="bg-brand-light rounded-2xl p-8 text-center hover:shadow-lg transition-shadow"
-            >
-              <div className="w-16 h-16 bg-brand-primary/10 rounded-full flex items-center justify-center mx-auto mb-5">
-                <item.icon className="w-8 h-8 text-brand-primary" />
-              </div>
-              <h3 className="text-xl font-bold text-brand-dark mb-3">
-                {item.title}
-              </h3>
-              <p className="text-gray-600 leading-relaxed">{item.description}</p>
-            </motion.div>
-          ))}
+          {credentials.map((item, index) => {
+            const content = (
+              <>
+                <div className="w-16 h-16 bg-brand-primary/10 rounded-full flex items-center justify-center mx-auto mb-5">
+                  <item.icon className="w-8 h-8 text-brand-primary" />
+                </div>
+                <h3 className="text-xl font-bold text-brand-dark mb-3">
+                  {item.title}
+                </h3>
+                <p className="text-gray-600 leading-relaxed">{item.description}</p>
+              </>
+            );
+
+            return item.href ? (
+              <motion.a
+                key={item.title}
+                href={item.href}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.15 }}
+                className="bg-brand-light rounded-2xl p-8 text-center hover:shadow-lg transition-shadow cursor-pointer"
+              >
+                {content}
+              </motion.a>
+            ) : (
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.15 }}
+                className="bg-brand-light rounded-2xl p-8 text-center hover:shadow-lg transition-shadow"
+              >
+                {content}
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>
