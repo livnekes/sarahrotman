@@ -6,11 +6,11 @@ const Footer = () => {
           <div className="text-center md:text-right">
             <h3 className="text-xl font-bold mb-1">ד״ר שרה רוטמן</h3>
             <p className="text-white/60 text-sm">
-              מומחית אף אוזן גרון וכירורגיה של ראש וצוואר | מומחית בנחירות ודום נשימה בשינה
+              מומחית אף אוזן גרון וכירורגיה של ראש וצוואר | מתמקצעת בנחירות ודום נשימה בשינה במבוגרים וילדים
             </p>
           </div>
 
-          <div className="flex gap-6 text-white/60 text-sm">
+          <div className="flex flex-wrap justify-center gap-4 md:gap-6 text-white/60 text-sm">
             <a href="#about" className="hover:text-white transition-colors">
               אודות
             </a>
@@ -18,7 +18,13 @@ const Footer = () => {
               ניתוחים וטיפולים
             </a>
             <a href="#osa" className="hover:text-white transition-colors">
-              דום נשימה בשינה
+              דום נשימה במבוגרים
+            </a>
+            <a href="#osa-children" className="hover:text-white transition-colors">
+              דום נשימה בילדים
+            </a>
+            <a href="#dise" className="hover:text-white transition-colors">
+              DISE
             </a>
             <a href="#contact" className="hover:text-white transition-colors">
               צור קשר

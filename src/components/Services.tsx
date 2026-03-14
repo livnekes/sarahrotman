@@ -1,46 +1,54 @@
 import { motion } from "framer-motion";
-import { Ear, Wind, Mic2, Baby, Scissors, Microscope, Moon, Stethoscope } from "lucide-react";
+import { Ear, Wind, Mic2, Baby, Moon, Scissors, Microscope, Stethoscope } from "lucide-react";
 
 const services = [
   {
+    icon: Moon,
+    title: "נחירות ודום נשימה בשינה במבוגרים",
+    description: "אבחון וקביעת תוכנית טיפולית מותאמת אישית לנחירות ודום נשימה חסימתי בשינה",
+    href: "#osa",
+  },
+  {
+    icon: Baby,
+    title: "נחירות ודום נשימה בשינה בילדים",
+    description: "אבחון וקביעת תוכנית טיפולית לנחירות ודום נשימה בשינה בילדים",
+    href: "#osa-children",
+  },
+  {
+    icon: Microscope,
+    title: "DISE",
+    description: "Drug Induced Sleep Endoscopy - בדיקה אבחנתית מתקדמת לאיתור אתרי החסימה בדרכי הנשימה במהלך השינה",
+    href: "#dise",
+  },
+  {
     icon: Ear,
     title: "ניתוחי אוזניים",
-    description: "ניקוז מעור התוף, הכנסה והוצאת כפתורים, הרחבת תעלות שמע באמצעות בלון",
+    description: "ניקוז מעור התוף, הכנסה והוצאת צנוריות אוורור, הרחבת תעלות שמע באמצעות בלון (בהרדמה כללית ובהרדמה מקומית)",
+    href: undefined,
   },
   {
     icon: Wind,
     title: "ניתוחי אף וסינוסים",
     description: "ניתוחי ספטום, הקטנת קונכיות, כריתת פוליפים, FESS וצריבה ברירית האף",
+    href: undefined,
   },
   {
     icon: Mic2,
     title: "ניתוחי גרון",
     description: "לרינגוסקופיה ישירה, כריתת לשון מלאה או חלקית, ביופסיה",
-  },
-  {
-    icon: Baby,
-    title: "ניתוחי ילדים",
-    description: "כריתת שקדים ואדנואידים, הכנסת כפתורים, פרנולום (חיתוך רצועת הלשון)",
-  },
-  {
-    icon: Moon,
-    title: "ניתוחי נחירות ודום נשימה",
-    description: "ניתוחי UPPP וניתוחים נוספים לטיפול בנחירות ודום נשימה חסימתי בשינה",
+    href: undefined,
   },
   {
     icon: Scissors,
     title: "כריתת שקדים",
     description: "כריתת שקדים בשיטה קלאסית ובקובלציה - טכנולוגיה מתקדמת להפחתת כאב וזמן החלמה",
-  },
-  {
-    icon: Microscope,
-    title: "אנדוסקופיה ואבחון",
-    description: "בדיקות אנדוסקופיות מתקדמות, ביופסיות מאף ואוזן חיצונית",
+    href: undefined,
   },
   {
     icon: Stethoscope,
-    title: "ניתוחים נוספים",
-    description: "כריתת נגעים מהאוזן, ניקוז מעור התוף ומגוון ניתוחים נוספים בתחום אא״ג",
+    title: "אנדוסקופיה ואבחון",
+    description: "קיים במרפאה אנדוסקופ פדיאטרי מתקדם המאפשר תיעוד בוידאו. מאפשר בדיקה של ילדים והערכה של האף, נאזופריקס (אדנואיד/שקד שלישי) ונגעים במיתרי הקול. הממצאים מוצגים למטופל בזמן אמת",
+    href: undefined,
   },
 ];
 
@@ -60,31 +68,42 @@ const Services = () => {
           </h2>
           <div className="w-20 h-1 bg-brand-accent mx-auto mb-6" />
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-            מגוון רחב של ניתוחים וטיפולים בתחום אף אוזן גרון, בבית החולים רפאל
+            מגוון רחב של ניתוחים וטיפולים בתחום אף אוזן גרון
           </p>
         </motion.div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {services.map((service, index) => (
-            <motion.div
-              key={service.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white rounded-2xl p-6 hover:shadow-lg transition-all hover:-translate-y-1 border border-gray-100"
-            >
-              <div className="w-12 h-12 bg-brand-accent/10 rounded-xl flex items-center justify-center mb-4">
-                <service.icon className="w-6 h-6 text-brand-accent" />
-              </div>
-              <h3 className="text-lg font-bold text-brand-dark mb-2">
-                {service.title}
-              </h3>
-              <p className="text-gray-500 text-sm leading-relaxed">
-                {service.description}
-              </p>
-            </motion.div>
-          ))}
+          {services.map((service, index) => {
+            const Card = (
+              <motion.div
+                key={service.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className={`bg-white rounded-2xl p-6 hover:shadow-lg transition-all hover:-translate-y-1 border border-gray-100 ${service.href ? "cursor-pointer" : ""}`}
+              >
+                <div className="w-12 h-12 bg-brand-accent/10 rounded-xl flex items-center justify-center mb-4">
+                  <service.icon className="w-6 h-6 text-brand-accent" />
+                </div>
+                <h3 className="text-lg font-bold text-brand-dark mb-2">
+                  {service.title}
+                </h3>
+                <p className="text-gray-500 text-sm leading-relaxed">
+                  {service.description}
+                </p>
+              </motion.div>
+            );
+
+            if (service.href) {
+              return (
+                <a key={service.title} href={service.href} className="block">
+                  {Card}
+                </a>
+              );
+            }
+            return Card;
+          })}
         </div>
       </div>
     </section>

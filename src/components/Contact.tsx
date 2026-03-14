@@ -1,30 +1,16 @@
 import { motion } from "framer-motion";
-import { Phone, MapPin, Clock, Building2 } from "lucide-react";
+import { Phone, MapPin, Mail, MessageCircle, Calendar } from "lucide-react";
 
-const contactInfo = [
+const clinics = [
   {
-    icon: Phone,
-    title: "טלפון",
-    details: ["054-000-0000"],
-    href: "tel:+972000000000",
+    name: "מרפאה בתל אביב",
+    address: "הברזל 24 (הנחושת 2), כניסה C, קומה 1",
+    area: "רמת החייל, תל אביב",
   },
   {
-    icon: Building2,
-    title: "בית חולים",
-    details: ["בית החולים רפאל"],
-    href: undefined,
-  },
-  {
-    icon: MapPin,
-    title: "כתובת",
-    details: ["בית החולים רפאל"],
-    href: undefined,
-  },
-  {
-    icon: Clock,
-    title: "שעות קבלה",
-    details: ["בתיאום מראש"],
-    href: undefined,
+    name: "מרפאה בראשון לציון",
+    address: "מגדל עסקים קניון ראשונים, שדרות נים 2",
+    area: "קומה 5, מרפאות רוי מומחים, ראשון לציון",
   },
 ];
 
@@ -48,39 +34,92 @@ const Contact = () => {
           </p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
-          {contactInfo.map((item, index) => (
+        {/* Clinics */}
+        <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-10">
+          {clinics.map((clinic, index) => (
             <motion.div
-              key={item.title}
+              key={clinic.name}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow"
+              className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow"
             >
-              <div className="w-14 h-14 bg-brand-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <item.icon className="w-7 h-7 text-brand-primary" />
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 bg-brand-primary/10 rounded-full flex items-center justify-center">
+                  <MapPin className="w-6 h-6 text-brand-primary" />
+                </div>
+                <h3 className="text-lg font-bold text-brand-dark">{clinic.name}</h3>
               </div>
-              <h3 className="text-lg font-bold text-brand-dark mb-2">
-                {item.title}
-              </h3>
-              {item.details.map((detail) =>
-                item.href ? (
-                  <a
-                    key={detail}
-                    href={item.href}
-                    className="block text-gray-600 hover:text-brand-primary transition-colors"
-                  >
-                    {detail}
-                  </a>
-                ) : (
-                  <p key={detail} className="text-gray-600 text-sm">
-                    {detail}
-                  </p>
-                )
-              )}
+              <p className="text-gray-600 mb-1">{clinic.address}</p>
+              <p className="text-gray-500 text-sm">{clinic.area}</p>
             </motion.div>
           ))}
+        </div>
+
+        {/* Contact methods */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="bg-white rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow"
+          >
+            <div className="w-14 h-14 bg-brand-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Phone className="w-7 h-7 text-brand-primary" />
+            </div>
+            <h3 className="text-lg font-bold text-brand-dark mb-2">טלפון</h3>
+            <a href="tel:0539957198" className="block text-gray-600 hover:text-brand-primary transition-colors">
+              053-9957198
+            </a>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="bg-white rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow"
+          >
+            <div className="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <MessageCircle className="w-7 h-7 text-green-600" />
+            </div>
+            <h3 className="text-lg font-bold text-brand-dark mb-2">וואטסאפ</h3>
+            <a href="tel:0539957058" className="block text-gray-600 hover:text-green-600 transition-colors">
+              053-9957058
+            </a>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="bg-white rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow"
+          >
+            <div className="w-14 h-14 bg-brand-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Mail className="w-7 h-7 text-brand-primary" />
+            </div>
+            <h3 className="text-lg font-bold text-brand-dark mb-2">דוא״ל</h3>
+            <a href="mailto:doctorsarahrothman@gmail.com" className="block text-gray-600 hover:text-brand-primary transition-colors text-sm">
+              doctorsarahrothman@gmail.com
+            </a>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="bg-white rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow"
+          >
+            <div className="w-14 h-14 bg-brand-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Calendar className="w-7 h-7 text-brand-accent" />
+            </div>
+            <h3 className="text-lg font-bold text-brand-dark mb-2">קביעת תור</h3>
+            <p className="text-gray-500 text-sm">זימון תורים אונליין</p>
+          </motion.div>
         </div>
       </div>
     </section>
