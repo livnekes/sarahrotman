@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { MapPin, Mail, MessageCircle } from "lucide-react";
+import { MapPin, Mail } from "lucide-react";
 
 const clinics = [
   {
@@ -41,7 +41,7 @@ const Contact = () => {
         </motion.div>
 
         {/* Clinics + Contact methods in one row */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {clinics.map((clinic, index) => (
             <motion.div
               key={clinic.name}
@@ -67,22 +67,6 @@ const Contact = () => {
               </p>
             </motion.div>
           ))}
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="bg-white rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow"
-          >
-            <div className="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <MessageCircle className="w-7 h-7 text-green-600" />
-            </div>
-            <h3 className="text-lg font-bold text-brand-dark mb-2">וואטסאפ</h3>
-            <a href="https://wa.me/9720539957058" target="_blank" rel="noopener noreferrer" className="block text-gray-600 hover:text-green-600 transition-colors">
-              053-9957058
-            </a>
-          </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}

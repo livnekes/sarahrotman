@@ -1,6 +1,7 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
+import Education from "./components/Education";
 import Services from "./components/Services";
 import OSA from "./components/OSA";
 import OSAChildren from "./components/OSAChildren";
@@ -22,6 +23,7 @@ function App() {
       <OSAChildren />
       <DISE />
       <Italy />
+      <Education />
       <Awards />
       <Reviews />
       <Contact />

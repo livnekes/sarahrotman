@@ -6,6 +6,7 @@ const credentials = [
     icon: GraduationCap,
     title: "השכלה",
     description: "MD - לימודי רפואה באוניברסיטת בן גוריון בנגב",
+    href: "#education",
   },
   {
     icon: Stethoscope,

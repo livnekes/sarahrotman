@@ -10,9 +10,10 @@ interface GalleryImage {
 
 interface ImageGalleryProps {
   images: GalleryImage[];
+  columns?: number;
 }
 
-const ImageGallery = ({ images }: ImageGalleryProps) => {
+const ImageGallery = ({ images, columns = 2 }: ImageGalleryProps) => {
   const [modalOpen, setModalOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -27,7 +28,7 @@ const ImageGallery = ({ images }: ImageGalleryProps) => {
   return (
     <>
       {/* Thumbnails */}
-      <div className="grid grid-cols-2 gap-4">
+      <div className={`grid gap-4 ${columns === 3 ? "grid-cols-3" : "grid-cols-2"}`}>
         {images.map((img, index) => (
           <button
             key={img.src}

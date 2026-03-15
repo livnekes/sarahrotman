@@ -9,6 +9,11 @@ const awardImages = [
     caption: "פרס New Investigator Award בכנס World Sleep 2023, ריו דה ז׳ניירו",
   },
   {
+    src: "/new-investigator-award.jpg",
+    alt: "New Investigator Award",
+    caption: "פרס New Investigator Award",
+  },
+  {
     src: "/walter-berdon-award.png",
     alt: "Walter E. Berdon Award - Best Clinical Research Paper",
     caption: "פרס המאמר המחקרי הקליני הטוב ביותר ע״ש וולטר, 2016",
@@ -36,34 +41,26 @@ const Awards = () => {
         </motion.div>
 
         <div className="max-w-5xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-10 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <div className="text-gray-600 leading-relaxed space-y-4">
-                <p>
-                  ד״ר רוטמן קיבלה מספר פרסי מחקר על תרומתה האקדמית לתחום.
-                </p>
-                <p>
-                  מחקר פרוספקטיבי רנדומלי שהתפרסם בכתב העת Pediatric Radiology זכה בפרס המאמר המחקרי הקליני הטוב ביותר ע״ש וולטר לשנת 2016.
-                </p>
-                <p>
-                  המחקר האחרון שלה, שהוצג בכנס World Sleep 2023 בריו דה ז׳ניירו, זיכה אותה בפרס היוקרתי <strong>New Investigator Award</strong>.
-                </p>
-              </div>
-            </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-gray-600 leading-relaxed space-y-4 text-center max-w-3xl mx-auto mb-12"
+          >
+            <p>
+              ד״ר רוטמן קיבלה מספר פרסי מחקר על תרומתה האקדמית לתחום.
+            </p>
+            <p>
+              מחקר פרוספקטיבי רנדומלי שהתפרסם בכתב העת Pediatric Radiology זכה בפרס המאמר המחקרי הקליני הטוב ביותר ע״ש וולטר לשנת 2016.
+            </p>
+            <p>
+              המחקר האחרון שלה, שהוצג בכנס World Sleep 2023 בריו דה ז׳ניירו, זיכה אותה בפרס היוקרתי <strong>New Investigator Award</strong>.
+            </p>
+          </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
-              <ImageGallery images={awardImages} />
-            </motion.div>
+          <div className="max-w-3xl mx-auto">
+            <ImageGallery images={awardImages} columns={3} />
           </div>
         </div>
       </div>
