@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { GraduationCap, Award, Stethoscope, Globe, BookOpen } from "lucide-react";
+import { GraduationCap, Award, Stethoscope, Globe, BookOpen, Star } from "lucide-react";
 
 const credentials = [
   {
@@ -29,6 +29,12 @@ const credentials = [
     icon: BookOpen,
     title: "חברות מקצועית",
     description: "חברה באיגוד רופאי אא״ג מנתחי ראש צוואר בישראל וב-International Surgical Sleep Society",
+  },
+  {
+    icon: Star,
+    title: "ביקורות",
+    description: "דירוג 5 כוכבים בגוגל - מטופלים ממליצים על מקצועיות, יחס אישי וטיפול מסור",
+    href: "#reviews",
   },
 ];
 
