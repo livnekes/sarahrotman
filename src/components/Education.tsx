@@ -80,7 +80,7 @@ const Education = () => {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   onClick={() => openModal(index)}
-                  className="group relative overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-shadow cursor-pointer"
+                  className="group relative overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-shadow cursor-pointer aspect-square"
                 >
                   <img
                     src={img.src}

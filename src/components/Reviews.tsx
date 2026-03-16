@@ -114,17 +114,23 @@ const Reviews = () => {
   const checkScroll = () => {
     const el = scrollRef.current;
     if (!el) return;
-    // RTL: scrollLeft is negative in RTL containers
-    setCanScrollRight(Math.abs(el.scrollLeft) > 0);
-    setCanScrollLeft(
-      Math.abs(el.scrollLeft) < el.scrollWidth - el.clientWidth - 1
-    );
+    const scrollLeft = el.scrollLeft;
+    const maxScroll = el.scrollWidth - el.clientWidth;
+    // RTL: scrollLeft can be negative (Firefox/Chrome) or positive (Safari)
+    // Use a unified check based on how far we can scroll in each direction
+    const atStart = Math.abs(scrollLeft) < 1;
+    const atEnd = Math.abs(Math.abs(scrollLeft) - maxScroll) < 1;
+    // In RTL, "right" arrow goes to previous items (scroll toward start)
+    // "left" arrow goes to next items (scroll toward end)
+    setCanScrollRight(!atStart);
+    setCanScrollLeft(!atEnd);
   };
 
   useEffect(() => {
     const el = scrollRef.current;
     if (!el) return;
-    checkScroll();
+    // Wait for layout to settle
+    setTimeout(checkScroll, 100);
     el.addEventListener("scroll", checkScroll, { passive: true });
     window.addEventListener("resize", checkScroll);
     return () => {
@@ -137,7 +143,8 @@ const Reviews = () => {
     const el = scrollRef.current;
     if (!el) return;
     const amount = 300;
-    // In RTL, "left" visually means positive scrollLeft
+    // In RTL containers, scrollBy left/right is consistent:
+    // negative = visually right (toward start), positive = visually left (toward end)
     el.scrollBy({
       left: direction === "left" ? amount : -amount,
       behavior: "smooth",

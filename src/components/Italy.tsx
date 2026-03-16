@@ -4,11 +4,6 @@ import ImageGallery from "./ImageGallery";
 
 const italyImages = [
   {
-    src: "/italy-team.jpg",
-    alt: "צוות ההשתלמות בפורלי, איטליה",
-    caption: "צוות ההשתלמות במחלקת אא״ג בפורלי, איטליה",
-  },
-  {
     src: "/newspaper-article.png",
     alt: "כתבה בעיתון האיטלקי על הצוות של פרופ׳ ויציני",
     caption: "כתבה בעיתון האיטלקי על הצוות של פרופ׳ ויציני",
