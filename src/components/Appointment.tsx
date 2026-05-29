@@ -24,6 +24,9 @@ const Appointment = () => {
         clinicId: ODORO_CLINIC_ID,
         mode: "public",
         divId: ODORO_DIV_ID,
+        onPageRender: (event: { focusBehavior?: () => void }) => {
+          event.focusBehavior = () => {};
+        },
       },
     };
 
