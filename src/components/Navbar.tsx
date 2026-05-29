@@ -35,9 +35,7 @@ const Navbar = () => {
               </a>
             ))}
             <a
-              href="https://www.doctorim.co.il/doctor-10016703/%D7%93%D7%A8-%D7%A9%D7%A8%D7%94-%D7%A8%D7%95%D7%98%D7%9E%D7%9F/%D7%90%D7%A3-%D7%90%D7%95%D7%96%D7%9F-%D7%92%D7%A8%D7%95%D7%9F?status=appoint&bycln=10021413"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#appointment"
               className="flex items-center gap-2 bg-brand-primary text-white px-5 py-2.5 rounded-full hover:bg-brand-dark transition-colors font-medium text-sm"
             >
               <Phone className="w-4 h-4" />
@@ -68,9 +66,7 @@ const Navbar = () => {
               </a>
             ))}
             <a
-              href="https://www.doctorim.co.il/doctor-10016703/%D7%93%D7%A8-%D7%A9%D7%A8%D7%94-%D7%A8%D7%95%D7%98%D7%9E%D7%9F/%D7%90%D7%A3-%D7%90%D7%95%D7%96%D7%9F-%D7%92%D7%A8%D7%95%D7%9F?status=appoint&bycln=10021413"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#appointment"
               onClick={() => setIsOpen(false)}
               className="flex items-center justify-center gap-2 mt-2 bg-brand-primary text-white px-5 py-2.5 rounded-full hover:bg-brand-dark transition-colors font-medium"
             >

@@ -9,6 +9,7 @@ import DISE from "./components/DISE";
 import Italy from "./components/Italy";
 import Awards from "./components/Awards";
 import Reviews from "./components/Reviews";
+import Appointment from "./components/Appointment";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
@@ -26,6 +27,7 @@ function App() {
       <Education />
       <Awards />
       <Reviews />
+      <Appointment />
       <Contact />
       <Footer />
     </div>
