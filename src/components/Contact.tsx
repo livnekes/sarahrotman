@@ -14,8 +14,8 @@ const clinics = [
     name: "מרפאה בראשון לציון",
     address: "מרכז פריימן לעסקים, כניסה ב', קומה 2",
     area: "ראשון לציון",
-    phone: "053-9957058",
-    phoneHref: "tel:0539957058",
+    phone: "053-9957198",
+    phoneHref: "tel:0539957198",
     phoneLabel: "זימון תור",
   },
 ];
